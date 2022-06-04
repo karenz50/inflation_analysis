@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "gdp_date", 
+    "type": "DATE"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "gdp_value", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "gdp_change", 
+    "type": "FLOAT"
+  }
+]
