@@ -25,3 +25,5 @@ Weekly Texas Regular Conventional Retail Gasoline Prices: https://www.eia.gov/dn
 ### GDP Data
 Gross Domestic Product of the United States (US GDP): 
 https://datahub.io/core/gdp-us
+
+## Create Tables
