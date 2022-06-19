@@ -68,3 +68,10 @@ bq mk --table recession_db.gdp gdp_schema.json
 bq show --schema --format=prettyjson recession_db.gdp
 bq query --nouse_legacy_sql 'SELECT count(*) Total from recession_db.gdp'
 ```
+## Load Data
+### Load Data to GDP Table
+```bigquery
+bq load --noreplace --source_format=CSV --skip_leading_rows=1 recession_db.gdp gdp_quarter.csv
+bq show recession_db.gdp
+bq query --nouse_legacy_sql 'SELECT count(*) Total from recession_db.gdp'
+```
