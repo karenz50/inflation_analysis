@@ -22,7 +22,6 @@ The project included one dataset, recession_db, with 2 tables, gas_price and gdp
 | ----------- | ---- | ---- |
 | price_date | DATE | REQUIRED |
 | price_per_gallon | FLOAT | REQUIRED |
-| price_year | INTEGER | REQUIRED |
 
 ### Table gdp: 
 | Column Name | Type | Mode |
@@ -68,6 +67,30 @@ bq mk --table recession_db.gdp gdp_schema.json
 bq show --schema --format=prettyjson recession_db.gdp
 bq query --nouse_legacy_sql 'SELECT count(*) Total from recession_db.gdp'
 ```
+### Gas Price Table
+A similar json file is used for creating the gas_price table.
+#### gas_price_schema.json
+```json
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "price_date", 
+    "type": "DATE"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "price_per_gallon", 
+    "type": "FLOAT"
+  }
+]
+```
+The first line of code below creates recession_db.gas_price table using gdp_schema.json, the second line shows the schema of the table, and the last line verifies that there are no rows in the table.
+``` bigquery
+bq mk --table recession_db.gas_price gas_price_schema.json
+bq show --schema --format=prettyjson recession_db.gas_price
+bq query --nouse_legacy_sql 'SELECT count(*) Total from recession_db.gas_price'
+```
+
 ## Load Data
 ### Load Data to GDP Table
 ```bigquery
