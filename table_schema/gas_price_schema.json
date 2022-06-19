@@ -1,0 +1,12 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "price_date", 
+    "type": "DATE"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "price_per_gallon", 
+    "type": "FLOAT"
+  }
+]
