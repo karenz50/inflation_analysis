@@ -39,3 +39,32 @@ Gross Domestic Product of the United States (US GDP):
 https://datahub.io/core/gdp-us
 
 ## Create Tables
+### GDP Table
+A json schema file is used for creating the gdp table.
+
+#### gdp_schema.json
+``` json
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "gdp_date", 
+    "type": "DATE"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "gdp_value", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "gdp_change", 
+    "type": "FLOAT"
+  }
+]
+```
+The first line of code below creates recession_db.gdp table using gdp_schema.json, the second line shows the schema of the table, and the last line verifies that there are no rows in the table.
+``` bigquery
+bq mk --table recession_db.gdp gdp_schema.json
+bq show --schema --format=prettyjson recession_db.gdp
+bq query --nouse_legacy_sql 'SELECT count(*) Total from recession_db.gdp'
+```
